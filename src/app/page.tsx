@@ -1,101 +1,149 @@
-import Image from "next/image";
+// src/app/page.tsx
+import Image from 'next/image';
 
-export default function Home() {
+import 'animate.css/animate.min.css'; // Updated import statement
+
+export default function Page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    
+    <div className=" bg-yellow-300 ">
+      <div className=" section">
+        <nav className="navbar navbar-expand-lg text-black">
+          <div className="">
+            <div className=" navbar">
+           
+              <nav className= " bg-yellow-900 w-100 p-4">
+            <div className="container-fluid mx-auto flex justify-between items-center">
+                <div className="text-white font-bold text-lg">
+                <a className="navbar-brand me-5" href="#">
+                <h1 className="animate__animated animate__bounce">
+                  <Image className = "w-30 h-20 transition-transform duration-300 transform hover:scale-110"
+                    src="/images/SiteLogo.png"
+                    alt="Site Logo"
+                   
+                    width={200} // Adjust width as needed
+                    height={100} // Adjust height as needed
+                  />
+                </h1>
+              </a> 
+                </div>
+                <div className="hidden md:flex space-x-4">
+                    <a href="#" className="text-white hover:bg-yellow-700 p-2 rounded">Home</a>
+                    <a href="#" className="text-white hover:bg-yellow-700 p-2 rounded">About</a>
+                    <a href="#" className="text-white hover:bg-yellow-700 p-2 rounded">Services</a>
+                    <a href="#" className="text-white hover:bg-yellow-700 p-2 rounded">Contact</a>
+                </div>
+                <div className="md:hidden">
+                    <button id="menu-btn" className="text-white focus:outline-none">
+                        &#9776; {/* Hamburger Icon */}
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" className="md:hidden bg-blue-600 hidden">
+                <a href="#" className="block text-white hover:bg-blue-700 p-2">Home</a>
+                <a href="#" className="block text-white hover:bg-blue-700 p-2">About</a>
+                <a href="#" className="block text-white hover:bg-blue-700 p-2">Services</a>
+                <a href="#" className="block text-white hover:bg-blue-700 p-2">Contact</a>
+            </div>
+        </nav>
+              {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className=" navbar-nav mb-2 mb-lg-0 ms-auto">
+                  <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="#">
+                      About
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Features
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Pricing
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Gallery
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Team
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link ms-auto" href="#">
+                      <Image
+                        src="/images/button1.png"
+                        alt="Button Image"
+                        className="img-fluid"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <Image
+                        src="/images/social1.png"
+                        alt="Social Image 1"
+                        className="img-fluid"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src="/images/social2.png"
+                        alt="Social Image 2"
+                        className="img-fluid"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                      <Image
+                        src="/images/social.png"
+                        alt="Social Image 3"
+                        className="img-fluid"
+                        width={30} // Adjust width as needed
+                        height={30} // Adjust height as needed
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div> */}
+            </div>
+          </div>
+        </nav>
+        <div className="container align-items-center">
+          <div className="row align-items-center">
+            <div className="col-12 col-lg-6 col-md-12 col-sm-12">
+              <h1 className='flex justify-center items-center  text-6xl mt-5'>Give robots a second chance</h1>
+              <p className='mt-5'>
+                We save 1 million robots from destruction every year and find a new home for them. Let's save
+                the robots! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sit nisi eum culpa laboriosam aliquam consectetur. Impedit provident similique quas doloremque dolor rem minima quae id cupiditate perferendis, qui vero!
+              </p>
+              <button type="button" className="hover:bg-yellow-900 btn btn-warning btn-sm rounded-pill">
+                <Image 
+                  src="/images/button.png"
+                  alt="Get Started Button"
+                  className="  img-fluid"
+                  width={200}
+                  height={100} 
+                />
+              </button>
+            </div>
+            <div className="flex justify-center items-center h-screen col-12 col-lg-6 col-md-12 col-sm-12">
+              <Image
+                src="/images/robot.png"
+                className="img-fluid"
+                alt="Robot Image"
+                width={500} // Adjust width as needed
+                height={500} // Adjust height as needed
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
