@@ -16,7 +16,7 @@ export default function Page() {
             <div className="container-fluid mx-auto flex justify-between items-center">
                 <div className="text-white font-bold text-lg">
                 <a className="navbar-brand me-5" href="#">
-                <h1 className="animate__animated animate__bounce">
+                <h1 className="animate__animated animate__backInLeft">
                   <Image className = "w-30 h-20 transition-transform duration-300 transform hover:scale-110"
                     src="/images/SiteLogo.png"
                     alt="Site Logo"
@@ -117,8 +117,8 @@ export default function Page() {
         <div className="container align-items-center">
           <div className="row align-items-center">
             <div className="col-12 col-lg-6 col-md-12 col-sm-12">
-              <h1 className='flex justify-center items-center  text-6xl mt-5'>Give robots a second chance</h1>
-              <p className='mt-5'>
+              <h1 className='flex justify-center items-center  text-6xl mt-5 animate__animated animate__lightSpeedInRight'>Give robots a second chance</h1>
+              <p className='mt-5 animate__animated animate__backInLeft'>
                 We save 1 million robots from destruction every year and find a new home for them. Let's save
                 the robots! Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sit nisi eum culpa laboriosam aliquam consectetur. Impedit provident similique quas doloremque dolor rem minima quae id cupiditate perferendis, qui vero!
               </p>
@@ -126,7 +126,7 @@ export default function Page() {
                 <Image 
                   src="/images/button.png"
                   alt="Get Started Button"
-                  className="  img-fluid"
+                  className="  img-fluid animate__animated animate__bounce"
                   width={200}
                   height={100} 
                 />
@@ -135,7 +135,7 @@ export default function Page() {
             <div className="flex justify-center items-center h-screen col-12 col-lg-6 col-md-12 col-sm-12">
               <Image
                 src="/images/robot.png"
-                className="img-fluid"
+                className="img-fluid animate__animated animate__lightSpeedInRight"
                 alt="Robot Image"
                 width={500} // Adjust width as needed
                 height={500} // Adjust height as needed
